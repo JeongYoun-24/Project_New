@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http//www.thymeleaf.org/extras/spring-security"
+	  layout:decorate="~{layout/layout2}">
+
+
+<div layout:fragment="content" class="m-3 p-3">
+
+	<!-- 리스트 -->
+	<div class="row mt-3">
+		<div class="col">
+
+			<div class="card">
+				<h5 class="card-header">영화 상세 페이지 </h5>
+				<div class="card-body">
+
+					<h5 class="card-title">영화 이미지 </h5>
+
+					<div sec:authorize="isAnonymous()">
+
+					</div>
+					<div sec:authorize="isAuthenticated()">
+						<span>[[${#authentication.principal.username}]]</span>
+						<input type="hidden" id="user" th:value="${#authentication.principal.username}">
+					</div>
+
+
+					<!-- Item list content -->
+					<div class="row">
+						<!-- 대표 이미지 -->
+						<div class="col-md-4">
+							<div>
+								<img  th:src="${movie.movieImgDTOList[0].imgUrl}" style="width:300px;" class="rounded m-auto d-block" alt="" >
+
+							</div>
+
+						</div>
+						<div class="col-md-2"></div>
+
+
+						<div class="col-md-5">
+							<!-- 판매 상태 -->
+							<span th:if="${movie.movieStatus == T(com.springboot.pople.constant.MovieStatus).OPEN}">개봉</span>
+							<span th:unless="${movie.movieStatus == T(com.springboot.pople.constant.MovieStatus).OPEN}">미개봉 </span>
+							<div class="h4" th:text="${movie.movieName}"></div>
+							<hr class="my-4">
+							<!--가격및 재고량 -->
+							<div>
+								<div>
+									<input type="hidden" th:value="${movie.id}" id="movieid" name="movieid" class="form-control">
+									<input type="hidden" id="movieName" th:value="${movie.movieName}">
+								</div>
+								<div class="input-group mb-3 mt-2">
+									<h5>관람등급</h5>
+									<hr class="">
+								</div>
+								<div>
+									[[${movie.movieRating}]]
+								</div>
+							</div>
+							<hr class="my-4">
+							<div class="text-right  d-flex ">
+								<h5>러닝타임(상영시간)</h5>
+								<hr class="">
+							</div>
+							<div>
+								[[${movie.movieTime}]]
+							</div>
+
+							<hr class="my-4">
+							<div class="text-right  d-flex ">
+								<h5>개봉일자</h5>
+								<hr class="">
+							</div>
+							<div>
+								[[${movie.movieDate}]]
+							</div>
+
+
+							<hr class="my-4">
+							<div th:if="${movie.movieStatus == T(com.springboot.pople.constant.MovieStatus).OPEN}" class="d-flex justify-content-between">
+								<div>
+									<a th:href="'/schedule/find/'+${movie.movieName}" class="btn btn-outline-dark">
+										예매하기
+									</a>
+									<!--									<button type="button" class="btn btn-outline-dark" id="tickting">예매하기</button>-->
+								</div>
+								<div>
+									<button type="button" class="btn btn-outline-dark" id="movieRevBtn" >리뷰보기</button>
+								</div>
+								<div>
+									<button type="button" class="btn btn-outline-dark" id="commentBtn" onclick="addCart()">댓글보기</button>
+								</div>
+								<div th:unless="${movie.movieStatus == T(com.springboot.pople.constant.MovieStatus).OPEN}">
+									<button type="button" class="btn btn-outline-dark" onclick="order()">예매예약하기</button>
+									<button type="button" class="btn btn-outline-dark" onclick="addCart()">검색</button>
+								</div>
+
+							</div>
+
+						</div>
+
+						<hr class="my-4">
+
+
+					</div>
+					<!-- 영화줄거리 설명 -->
+					<div class="container">
+						<h4 class="display-3">영화 줄거리 설명 </h4>
+						<hr class="my-4">
+						<p class="lead" th:text="${movie.MovieSummary}"></p>
+
+						<div>
+							<div>
+
+							</div>
+							<div>
+								<div class="d-flex">
+									<div class="my-2 mx-2 d-flex" th:each="movieImg : ${movie.movieImgDTOList}">
+										<img style="width:200px;" th:src="${movieImg.imgUrl}" class="img-fluid rounded mgb-15">
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+
+
+
+					</div>
+					<!-- 리뷰보기-->
+					<div  id="movieRev" class="mt-3">
+
+						<div class="d-flex justify-content-between>">
+							<div class="col-md-3">
+								<h3>영화 리뷰</h3>
+							</div>
+							<div  class="col-md-3"><button id="revCleBtn" class="btn btn-outline-dark ">리뷰닫기</button></div>
+							<div  class="col-md-3"></div>
+
+							<div class="col-md-3 ">
+								<button class="btn btn-outline-dark" ><a th:href="'/movieRev/form/'+${movie.movieName}">
+									리뷰 쓰기
+								</a></button>
+							</div>
+
+
+						</div>
+
+
+<!--						<div  th:if="${movieRev != null}">-->
+<!--fdsfsf-->
+<!--						</div>-->
+<!--						<div th:unless="${movieRev == null}">-->
+<!--fdsfdsfdsfsfdsfdsf-->
+<!--						</div>-->
+						<th:block th:if="${com != null}">
+							등록된 리뷰가 없습니다.
+
+
+						</th:block>
+
+						<div class="d-flex justify-content-center" th:if="${rev== null}">
+							<table class="table">
+								<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">제목</th>
+									<th scope="col">작성자</th>
+									<th scope="col">평점</th>
+									<th scope="col">작성일자</th>
+								</tr>
+								</thead>
+								<tbody >
+								<tr th:if="${movieRev == null}" >
+									<th scope="row">1</th>
+									<td>
+										재밌네요
+									</td>
+									<td>★★★★☆</td>
+									<td>2023.8.23</td>
+
+								</tr>
+								<tr  th:each="movieRev: ${movieRev}">
+									<th scope="row" >[[${movieRev.revid}]]</th>
+
+									<td>
+										<a th:href="@{'/movieRev/find/'+${movieRev.revid}}" >
+											[[${movieRev.revTitle}]]
+										</a>
+									</td>
+
+									<td>
+										[[${movieRev.users.name}]]
+									</td>
+									<td th:if="${movieRev.star == 1}">
+										★☆☆☆☆
+									</td>
+									<td th:if="${movieRev.star == 2}">
+										★★☆☆☆
+									</td>
+									<td th:if="${movieRev.star == 3}">
+										★★★☆☆
+									</td>
+									<td th:if="${movieRev.star == 4}">
+										★★★★☆
+									</td>
+									<td th:if="${movieRev.star == 5}">
+										★★★★★
+									</td>
+									<td>[[${#temporals.format(movieRev.revDate,'yyyy-MM-dd')}]]</td>
+
+								</tr>
+
+								</tbody>
+							</table>
+
+
+						</div>
+
+
+						<div th:with="start=${(movieRev.number/maxPage)*maxPage+1},end=(${movieRev.totalPages == 0 ? 1 : ( start + (maxPage-1) < movieRev.totalPages ? start + (maxPage-1):movieRev.totalPages)})" class="mt-3">
+
+							<nav aria-label="Page navigation example justify-content-end align-items-center">
+								<ul class="pagination justify-content-end " >
+
+
+									<li class="page-item" th:classappend="${movieRev.number eq 0} ? 'disabled' ">
+										<a class="page-link"
+										   th:href="@{'/movie/find/'+${movie.movieName}+'/'+${movieRev.number-1}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+										</svg></a>
+									</li>
+
+									<li class="page-item" th:each="page : ${#numbers.sequence(start, end)}"
+										th:classappend="${comment.number eq page-1} ? 'active ' : '' ">
+										<a class="page-link"
+										   th:href="@{'/movie/find/'+${movie.movieName}+'/'+${page-1}}" >[[${page}]]</a>
+									</li>
+
+									<li class="page-item" th:classappend="${comment.number+1 ge movieRev.totalPages} ? 'disabled' ">
+										<a class="page-link"
+										   th:href="@{'/movie/find/'+${movie.movieName}+'/'+${movieRev.number+1}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+										</svg>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+
+
+
+					</div>
+
+
+					<!--		댓글 보기 			-->
+					<div  id="commentlain" class="mt-3">
+
+						<div class="d-flex justify-content-between>">
+							<div class="col-md-3">
+								<h3>영화 댓글</h3>
+							</div>
+							<div  class="col-md-3"><button id="celBtn" class="btn btn-outline-dark">댓글닫기</button></div>
+							<div  class="col-md-3"></div>
+
+							<div class="col-md-3 ">
+								<button class="btn btn-outline-dark"><a th:href="'/comment/form/'+${movie.movieName}">
+									댓글쓰기
+								</a></button>
+							</div>
+
+
+						</div>
+
+
+						<th:block th:if="${com != null}">
+							등록된 댓글이 없습니다.
+
+
+						</th:block>
+						<div class="d-flex justify-content-center"  th:if="${com== null}">
+							<table class="table">
+								<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">제목</th>
+									<th scope="col">작성자</th>
+
+									<th scope="col">작성일자</th>
+								</tr>
+								</thead>
+								<tbody >
+								<tr th:if="${comment == null}" >
+									<th scope="row">1</th>
+									<td>
+										재밌네요
+									</td>
+									<td>★★★★☆</td>
+									<td>2023.8.23</td>
+
+								</tr>
+								<tr  th:each="comment: ${comment}">
+									<th scope="row" >[[${comment.id}]]</th>
+
+									<td>
+										<a th:href="@{'/comment/find/'+${comment.id}}" >
+											[[${comment.title}]]
+										</a>
+									</td>
+
+									<td>
+										[[${comment.users.name}]]
+									</td>
+
+									<td>[[${#temporals.format(comment.regDate,'yyyy-MM-dd')}]]</td>
+
+								</tr>
+
+								</tbody>
+							</table>
+
+
+						</div>
+
+
+						<div th:with="start=${(comment.number/maxPage)*maxPage+1},end=(${comment.totalPages == 0 ? 1 : ( start + (maxPage-1) < comment.totalPages ? start + (maxPage-1):comment.totalPages)})" class="mt-3">
+
+							<nav aria-label="Page navigation example justify-content-end align-items-center">
+								<ul class="pagination justify-content-end " >
+
+
+									<li class="page-item" th:classappend="${comment.number eq 0} ? 'disabled' ">
+										<a class="page-link"
+										   th:href="@{'/movie/find/'+${movie.movieName}+'/'+${comment.number-1}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+										</svg></a>
+									</li>
+
+									<li class="page-item" th:each="page : ${#numbers.sequence(start, end)}"
+										th:classappend="${comment.number eq page-1} ? 'active ' : '' ">
+										<a class="page-link"
+										   th:href="@{'/movie/find/'+${movie.movieName}+'/'+${page-1}}" >[[${page}]]</a>
+									</li>
+
+									<li class="page-item" th:classappend="${comment.number+1 ge comment.totalPages} ? 'disabled' ">
+										<a class="page-link"
+										   th:href="@{'/movie/find/'+${movie.movieName}+'/'+${comment.number+1}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+										</svg></a>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+
+
+
+					</div>
+
+
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+</div>
+
+
+
+
+<script layout:fragment="script"    th:inline="javascript">
+
+$(function(){
+	$('#commentlain').hide();
+	$('#movieRev').hide();
+
+	$('#commentBtn').click(function(){ // 댓글 보기
+		$('#commentlain').show();
+		$('#movieRev').hide();
+	})
+	$('#celBtn').click(function(){ // 댓글 닫기
+		$('#commentlain').hide();
+	})
+
+	$('#commentBtn2').click(function(){  // 댓글 쓰기
+		var movieName = $('#movieName').val();
+		var user = $('#user').val();
+		console.log(user)
+		console.log(movieid)
+
+		//location.href="/commetForm?movieName="+movieName;
+
+
+	})
+	$('#movieRevBtn').click(function(){ // 리뷰 보기
+		$('#movieRev').show();
+		$('#commentlain').hide();
+	})
+	$('#revCleBtn').click(function(){ // 리뷰 닫기
+			$('#movieRev').hide();
+		})
+
+
+})
+
+
+
+    var count = document.querySelector('#count');
+
+	$(function(){
+		$('#tickting').click(function(){
+		var movie = $('#movieid').val();
+			location.href="/schedule/find?movieid="+movie;
+
+		})
+
+	})
+
+
+
+
+    </script>
+<style  layout:fragment="css"       th:inline="css">
+        .clearBtn {
+            margin-left: 0.3em;
+        }
+
+        .pagination a {
+            cursor: pointer;
+        }
+        .btn-outline-dark:hover{
+
+        }
+
+
+    </style>
+</html>
