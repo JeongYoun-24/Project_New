@@ -43,8 +43,8 @@ https://www.erdcloud.com/d/tdySYeWEfqx92sqP2
 <BR>
 <H3>메인 페이지</H3>
 <BR>
-![main PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/085bb945-a335-4771-8812-213103cea430)
 
+<img src="https://github.com/JeongYoun-24/Project_New/assets/126854252/085bb945-a335-4771-8812-213103cea430" height="350">
 
 
 <UL>
