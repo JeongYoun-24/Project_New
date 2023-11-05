@@ -81,15 +81,99 @@ https://www.erdcloud.com/d/tdySYeWEfqx92sqP2
 <BR>
 
 
+<BR>
+<H3>영화 검색 페이지  </H3>
+<BR>
+
+![검색](https://github.com/JeongYoun-24/Project_New/assets/126854252/6422c686-d55d-4323-b260-e92ac0138de3)
 
 
 
+<BR>
+<UL>
+  <LI>영화를 검색하면 상영중인 영화를 찾아 보여주는 페이지 입니다.</LI>
+</UL>
+<BR>
+
+<BR>
+<H3>영화 상세 페이지  </H3>
+<BR>
+
+![상세](https://github.com/JeongYoun-24/Project_New/assets/126854252/38cab3ad-0810-4e38-b579-b2e44fb96f2a)
+<BR>
+<UL>
+  <LI>영화 상세 내용을 보여주는 페이지입니다. </LI>
+  <LI>영화 애매와 댓글 작성및 리뷰 작성 내용을 볼수있습니다.</LI>
+</UL>
+<BR>
+
+<BR>
+<H3>영화 예매 페이지  </H3>
+<BR>
+
+![예매 PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/a9d1d62f-5730-40c9-bfb9-cfe25ef8fd56)
+
+<BR>
+<UL>
+  <LI>영화 예매 할수있는 페이지입니다. </LI>
+  <LI>지역 선택과 영화관 선택 상영 선택하여 좌석을 예매할수 있습니다.</LI>
+</UL>
+<BR>
+<BR>
+<H3>영화 예매 내역 페이지  </H3>
+<BR>
+
+![예매내역 PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/58c2e9e5-caf2-44c6-8c43-55829f29cdc7)
 
 
+<BR>
+<UL>
+  <LI>영화 예매 내역을 확인 할 수 있는 페이지입니다. </LI>
+  <LI>언제 무슨 영화를 몇좌석 예매 했는지 확인할수 있습니다.</LI>
+</UL>
+<BR>
+
+<BR>
+<H3>상품 리스트 페이지  </H3>
+<BR>
+
+![상품리스트 PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/1a7e770d-7436-4bfe-ac1a-548d3cbaff73)
+
+<BR>
+<UL>
+  <LI>영화 볼때 필요한 상품등 보여주는 페이지입니다. </LI>
+  <LI>티켓과 팝콘 ,음료수,패키지등 을 보여줍니다.</LI>
+</UL>
+<BR>
+
+<BR>
+<H3>상품 구매 페이지  </H3>
+<BR>
+
+![상품구매 PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/fec884f2-664b-444d-88a8-58a243d86fad)
 
 
+<BR>
+<UL>
+  <LI>상품 구매 페이지입니다. </LI>
+  <LI>상품 리스트에서 원하는 상품 을 장바구니에 넣거나 바로 구매할수있습니다.</LI>
+</UL>
+<BR>
 
 
+<BR>
+<H3>상품 구매내역및 장바구니 페이지  </H3>
+<BR>
+
+![구매내역 PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/e5742498-0ceb-4a7a-8867-2aab0382866b)
+![장바구니 PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/0930582c-a15a-444f-bdde-de767c1be714)
+
+<BR>
+<UL>
+  <LI>상품 구매내역 및 장바구니 페이지입니다. </LI>
+  <LI>상품 리스트에서 구매한 내역과 장바구니에 넣어둔 상품을 확인 할 수 있습니다. </LI>
+</UL>
+<BR>
 
 
 
