@@ -68,9 +68,9 @@ https://www.erdcloud.com/d/tdySYeWEfqx92sqP2
 <BR>
 
 
-![아이디 PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/678932d7-e3ec-4e15-9c40-b6dbbd3cfb61)
 
-![비밀번호 PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/b4a1b27a-2dae-4cf5-9fa0-aa52110053df)
+<img src="https://github.com/JeongYoun-24/Project_New/assets/126854252/b4a1b27a-2dae-4cf5-9fa0-aa52110053df" height="550">
+<img src="https://github.com/JeongYoun-24/Project_New/assets/126854252/58bde7ed-029d-4bf4-bca0-2a2432b3c353" height="550">
 
 <BR>
 <UL>
