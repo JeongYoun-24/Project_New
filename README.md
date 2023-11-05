@@ -38,12 +38,15 @@ https://www.erdcloud.com/d/tdySYeWEfqx92sqP2
 # WEB 구조 
 ![web](https://github.com/JeongYoun-24/Project_New/assets/126854252/2542dd07-1be1-48b4-b3af-47362eeefa9b)
 
+
+
+<BR>
 <H3>메인 페이지</H3>
-
 <BR>
-![영화메인 PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/d5cf4609-45d0-4eb4-8fd6-08bdadb773d4)
+![main PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/085bb945-a335-4771-8812-213103cea430)
 
-<BR>
+
+
 <UL>
   <LI>관리자가 상영중인 영화를 설정해두면 회원들은 상영영화를 확인 할 수 있습니다.</LI>
   <LI>메인 페이지에는 5개씩 상영영화를 보여줍니다.  </LI>
@@ -56,7 +59,7 @@ https://www.erdcloud.com/d/tdySYeWEfqx92sqP2
 <BR>
 
 
-<img src="(https://github.com/JeongYoun-24/Project_New/assets/126854252/58bde7ed-029d-4bf4-bca0-2a2432b3c353" height="350">
+<img src="https://github.com/JeongYoun-24/Project_New/assets/126854252/58bde7ed-029d-4bf4-bca0-2a2432b3c353" height="350">
 
 <BR>
 <UL>
