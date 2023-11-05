@@ -100,6 +100,8 @@ https://www.erdcloud.com/d/tdySYeWEfqx92sqP2
 <BR>
 
 ![상세](https://github.com/JeongYoun-24/Project_New/assets/126854252/38cab3ad-0810-4e38-b579-b2e44fb96f2a)
+![리뷰](https://github.com/JeongYoun-24/Project_New/assets/126854252/b491a262-dd63-46ac-9e1f-80c0a539d491)
+
 <BR>
 <UL>
   <LI>영화 상세 내용을 보여주는 페이지입니다. </LI>
@@ -139,6 +141,9 @@ https://www.erdcloud.com/d/tdySYeWEfqx92sqP2
 
 ![상품리스트 PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/1a7e770d-7436-4bfe-ac1a-548d3cbaff73)
 
+
+![상품 데이터](https://github.com/JeongYoun-24/Project_New/assets/126854252/61fc87a0-55ce-4192-80d9-885683b49069)
+
 <BR>
 <UL>
   <LI>영화 볼때 필요한 상품등 보여주는 페이지입니다. </LI>
@@ -175,6 +180,18 @@ https://www.erdcloud.com/d/tdySYeWEfqx92sqP2
 </UL>
 <BR>
 
+<BR>
+<H3>ENTITY 다이어그램  </H3>
+<BR>
+
+![다이어그램](https://github.com/JeongYoun-24/Project_New/assets/126854252/f250fc4a-a4b4-4985-93b5-9d8ec9fee44e)
+
+
+<BR>
+<UL>
+  <LI>Entity맵핑 관계도(연관관계)를 보여주는 다이어그램입니다. </LI>
+</UL>
+<BR>
 
 
 
