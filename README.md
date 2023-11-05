@@ -60,6 +60,7 @@ https://www.erdcloud.com/d/tdySYeWEfqx92sqP2
 
 
 <img src="https://github.com/JeongYoun-24/Project_New/assets/126854252/58bde7ed-029d-4bf4-bca0-2a2432b3c353" height="350">
+![회원가입 PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/ec40353c-3aa6-4631-857a-137ace19719f)
 
 <BR>
 <UL>
