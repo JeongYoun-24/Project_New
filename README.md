@@ -7,7 +7,7 @@
 
 # 제작기간 & 참여 인원
 <UL>
-  <LI>2023.07.27 ~ 2023.08.16</LI>
+  <LI>2023.07.27 ~ 2023.08.24</LI>
   <LI>개인 프로젝트</LI>
 </UL>
 
@@ -25,8 +25,13 @@
 
 # E-R 다이어그램
 
+![ERD](https://github.com/JeongYoun-24/Project_New/assets/126854252/9700c15a-adc7-46d4-8759-3e4e2e4d349d)
 
 
+<UL>
+  <LI>ERD 보러가기</LI>
+</UL>
+https://www.erdcloud.com/d/tdySYeWEfqx92sqP2
 
 
 
