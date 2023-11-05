@@ -58,6 +58,8 @@ https://www.erdcloud.com/d/tdySYeWEfqx92sqP2
 
 <img src="(https://github.com/JeongYoun-24/Project_New/assets/126854252/58bde7ed-029d-4bf4-bca0-2a2432b3c353" height="350">
 
+![회원가입 PNG](https://github.com/JeongYoun-24/Project_New/assets/126854252/af1aced4-0e27-4837-b159-d8600f62c41e)
+
 <BR>
 <UL>
   <LI>블로그 설정을 통해 개개인 블로그의 헤더와 배경 이미지를 변경 할 수 있습니다. </LI>
