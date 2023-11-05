@@ -70,7 +70,7 @@ https://www.erdcloud.com/d/tdySYeWEfqx92sqP2
 
 
 <img src="https://github.com/JeongYoun-24/Project_New/assets/126854252/b4a1b27a-2dae-4cf5-9fa0-aa52110053df" height="550">
-<img src="https://github.com/JeongYoun-24/Project_New/assets/126854252/58bde7ed-029d-4bf4-bca0-2a2432b3c353" height="550">
+<img src="https://github.com/JeongYoun-24/Project_New/assets/126854252/01f50c12-74e2-406e-8676-2322ec0d772c" height="550">
 
 <BR>
 <UL>
